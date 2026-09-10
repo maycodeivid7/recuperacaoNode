@@ -47,5 +47,6 @@ app.post("/kc", (req, res) => {
 })
 
 app.listen(3000, () => {
-    return {"mensagem" : "Servidor funcionando!"}
+    //return {"mensagem" : "Servidor funcionando!"}
+    console.log("Servidor escutando na porta 3000!");
 })
