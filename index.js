@@ -12,7 +12,7 @@ app.get("/recursos", "req, res", () => {
 
 // Celsius para Fahrenheit
 // F = (C x 9/5) + 32
-app.get("/cf", "req, res", () => {
+app.post("/cf", "req, res", () => {
     const c = req.body.c;
 
     const f = (c * (9/5)) + 32;
@@ -24,7 +24,7 @@ app.get("/cf", "req, res", () => {
 
 // Fahrenheit para Celsius
 // C = (F - 32) x 5/9
-app.get("/fc", "req, res", () => {
+app.post("/fc", "req, res", () => {
     const f = req.body.f;
 
     const c = ((f - 32) * (5/9))
@@ -36,7 +36,7 @@ app.get("/fc", "req, res", () => {
 
 // Celsius para Kelvin
 // K = C + 273.15
-app.get("/kc", "req, res", () => {
+app.post("/kc", "req, res", () => {
     const c = req.body.c;
 
     const k = c + 273.15
