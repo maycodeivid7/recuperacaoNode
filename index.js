@@ -17,9 +17,7 @@ app.post("/cf", (req, res) => {
 
     const f = (c * (9/5)) + 32;
 
-    res.send(
-        f
-    )
+    res.send({f})
 })
 
 // Fahrenheit para Celsius
@@ -29,9 +27,7 @@ app.post("/fc", (req, res) => {
 
     const c = ((f - 32) * (5/9))
     
-    res.send(
-        c
-    )
+    res.send({c})
 })
 
 // Celsius para Kelvin
@@ -41,9 +37,7 @@ app.post("/kc", (req, res) => {
 
     const k = c + 273.15
 
-    res.send(
-        k
-    )
+    res.send({k})
 })
 
 app.listen(3000, () => {
