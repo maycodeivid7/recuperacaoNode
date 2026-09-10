@@ -36,7 +36,7 @@ app.post("/fc", (req, res) => {
 
 // Celsius para Kelvin
 // K = C + 273.15
-app.post("/kc", "req, res", () => {
+app.post("/kc", (req, res) => {
     const c = req.body.c;
 
     const k = c + 273.15
