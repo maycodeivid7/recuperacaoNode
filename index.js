@@ -5,33 +5,33 @@ const app = express();
 app.use(express.json());
 
 // funções disponíveis
-app.get("/recursos", "req, res", () => {
+app.get("/recursos", (req, res) => {
     
-    app.response("Você pode utilizar os endpoints: /recursos para listar todos os recursos, /cf converte Celsius para Fahrenheit, /fc converte Fahrenheit para Celsius, e /kc converte Celsius para Kelvin.")
+    res.send("Você pode utilizar os endpoints: /recursos para listar todos os recursos, /cf converte Celsius para Fahrenheit, /fc converte Fahrenheit para Celsius, e /kc converte Celsius para Kelvin.")
 })
 
 // Celsius para Fahrenheit
 // F = (C x 9/5) + 32
-app.post("/cf", "req, res", () => {
+app.post("/cf", (req, res) => {
     const c = req.body.c;
 
     const f = (c * (9/5)) + 32;
 
-    app.response( () =>  {
-        f;
-    })
+    res.send(
+        f
+    )
 })
 
 // Fahrenheit para Celsius
 // C = (F - 32) x 5/9
-app.post("/fc", "req, res", () => {
+app.post("/fc", (req, res) => {
     const f = req.body.f;
 
     const c = ((f - 32) * (5/9))
     
-    app.response( () =>  {
-        c;
-    })
+    res.send(
+        c
+    )
 })
 
 // Celsius para Kelvin
@@ -41,9 +41,9 @@ app.post("/kc", "req, res", () => {
 
     const k = c + 273.15
 
-    app.response( () =>  {
-        k;
-    })
+    res.send(
+        k
+    )
 })
 
 app.listen(3000, () => {
