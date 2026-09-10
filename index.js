@@ -7,7 +7,7 @@ app.use(express.json());
 // funções disponíveis
 app.get("/recursos", (req, res) => {
     
-    res.send({"mensagem": "Você pode utilizar os endpoints: /recursos para listar todos os recursos, /cf converte Celsius para Fahrenheit, /fc converte Fahrenheit para Celsius, e /kc converte Celsius para Kelvin."})
+    res.send({mensagem: "Você pode utilizar os endpoints: /recursos para listar todos os recursos, /cf converte Celsius para Fahrenheit, /fc converte Fahrenheit para Celsius, e /kc converte Celsius para Kelvin."})
 })
 
 // Celsius para Fahrenheit
